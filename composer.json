@@ -4,12 +4,27 @@
     "description": "The skeleton application for the Laravel framework.",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:fernandopiovezan1/laravel-generator.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:fernandopiovezan1/scribe.git"
+        }
+    ],
     "require": {
         "php": "^8.1",
+        "doctrine/dbal": "~3.6.2",
         "guzzlehttp/guzzle": "^7.2",
+        "infyomlabs/laravel-generator": "dev-personal-changes-with-service",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
-        "laravel/tinker": "^2.8"
+        "laravel/tinker": "^2.8",
+        "rennokki/laravel-eloquent-query-cache": "^3.4",
+        "tymon/jwt-auth": "^2.0",
+        "vinkla/hashids": "^11.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -18,7 +33,11 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
         "phpunit/phpunit": "^10.1",
-        "spatie/laravel-ignition": "^2.0"
+        "spatie/laravel-ignition": "^2.0",
+        "barryvdh/laravel-ide-helper": "^2.12",
+        "knuckleswtf/scribe": "dev-add-hashid-in-routes",
+        "laravel/telescope": "@dev",
+        "nunomaduro/phpinsights": "^2.8"
     },
     "autoload": {
         "psr-4": {
@@ -58,7 +77,8 @@
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },
     "minimum-stability": "stable",
