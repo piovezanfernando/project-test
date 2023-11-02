@@ -22,9 +22,9 @@ class CreateContactAPIRequest extends APIRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:50|string|max:50',
-            'phone' => 'nullable|string|max:20|nullable|string|max:20',
-            'email' => 'nullable|string|max:100|nullable|string|max:100'
+            'name' => 'required|string|min:5',
+            'phone' => 'nullable|digits:4',
+            'email' => 'nullable|email|max:100'
         ];
     }
 
