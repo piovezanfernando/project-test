@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => ['apiJwt']], function () {
+    
 });
+
+Route::resource('contacts', App\Http\Controllers\API\ContactController::class)
+    ->except(['create', 'edit']);

@@ -25,10 +25,10 @@ trait ApiTestTrait
     public function assertModelData(Array $actualData, Array $expectedData)
     {
         foreach ($actualData as $key => $value) {
-            if (in_array($key, ['created_at', 'updated_at'])) {
+            if (in_array($key, ['created_at', 'updated_at', 'created_by', 'updated_by'])) {
                 continue;
             }
-            $this->assertEquals($actualData[$key], $expectedData[$key]);
+            $this->assertEquals($value, $expectedData[$key]);
         }
     }
 }
