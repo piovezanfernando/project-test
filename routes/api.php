@@ -15,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['middleware' => ['apiJwt']], function () {
-    
+    Route::resource('contacts', App\Http\Controllers\API\ContactController::class)
+        ->except(['create', 'edit', 'index']);
 });
 
 Route::resource('contacts', App\Http\Controllers\API\ContactController::class)
-    ->except(['create', 'edit']);
+    ->only(['index']);
