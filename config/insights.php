@@ -107,7 +107,8 @@ return [
         PhpCsFixer\Fixer\ControlStructure\NoSuperfluousElseifFixer::class,
         NunoMaduro\PhpInsights\Domain\Insights\ForbiddenSecurityIssues::class,
         PHP_CodeSniffer\Standards\Generic\Sniffs\Commenting\TodoSniff::class,
-        PHP_CodeSniffer\Standards\Generic\Sniffs\Strings\UnnecessaryStringConcatSniff::class
+        PHP_CodeSniffer\Standards\Generic\Sniffs\Strings\UnnecessaryStringConcatSniff::class,
+        NunoMaduro\PhpInsights\Domain\Sniffs\ForbiddenSetterSniff::class
     ],
 
     'config' => [
@@ -161,6 +162,11 @@ return [
         \PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer::class => [
             'exclude' => [
                 'app/Repositories/BaseRepository.php',
+            ]
+        ],
+        \SlevomatCodingStandard\Sniffs\Classes\ForbiddenPublicPropertySniff::class => [
+            'exclude' => [
+                'app/Models/',
             ]
         ]
 
